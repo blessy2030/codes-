@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n,k,temp,i,j;
+    scanf("%d%d",&n,&k);
+    int a[n];
+    for(i=0;i<n;++i){
+        scanf("%d",&a[i]);}
+    for(i=0;i<n;i++){
+        if(a[i]!=n-i && k!=0){
+            j=i+1;
+            while(a[j]!=n-i)
+            {
+                j++;
+            }
+            temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+            k--;
+        }
+    }
+    for(i=0;i<n;++i){
+    printf("%d ",a[i]);}
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}

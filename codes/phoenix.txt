@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int comp(const void *a,const void *b){return *(char*)a-*(char*)b;}
+int main() {
+    int n;
+    scanf("%d",&n);
+    char s[n][1003],res[n+1];
+    for(int i=0;i<n;i++){
+        scanf("%s" , s[i]);
+        char minimum = 122;
+        for(int j=0; s[i][j]; j++){if(s[i][j]<minimum)minimum=s[i][j];}
+        res[i]=minimum;
+    }
+    res[n]='\0';
+    qsort(res,n,sizeof(char),comp);
+    printf("%s",res);
+    return 0;
+}

@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main() 
+
+{
+
+    string n;
+
+    cin>>n;
+
+    string s;
+
+    s=n;
+
+    next_permutation(n.begin(), n.end());
+
+    if(n>s)
+
+    {
+
+        cout<<n<<endl;
+
+    }
+
+    else {
+
+        cout<<"-1"<<endl;
+
+    }
+
+    
+
+    return 0;
+
+}

@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+struct date 
+{
+    int y,m,d;
+};
+int main()
+{
+  int n,i,j;
+    scanf("%d", &n);
+    struct date a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d%d%d", &a[i].d, &a[i].m, &a[i].y);
+    }
+        for(i=0;i<n;i++)
+        {
+                for(j=0;j<n-i-1;j++)
+                {
+                    if (a[j].y>a[j+1].y)
+                    {
+                        struct date temp=a[j];
+                        a[j]=a[j+1];
+                        a[j+1]=temp;
+                    }
+                    else if(a[j].y==a[j+1].y && a[j].m>a[j+1].m)
+                    {
+                        struct date temp=a[j];
+                        a[j]=a[j+1];
+                        a[j+1]=temp;
+                    }
+                    else if(a[j].y==a[j+1].y && a[j].m==a[j+1].m && a[j].d>a[j+1].d)
+                    {
+                        struct date temp=a[j];
+                        a[j]=a[j+1];
+                        a[j+1]=temp;
+                    }
+                }
+        }
+        for(i=0;i<n;i++)
+        {
+            printf("%d %d %d\n", a[i].d, a[i].m, a[i].y);
+        }
+
+    return 0;
+}
